@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400&family=Patrick+Hand&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Patrick Hand", cursive;
+  color: whitesmoke;
+  overflow: hidden;
+}
+
+body {
+  background-color: green;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: green;
+  width: 100%;
+  height: 25%;
+  padding-top: 2%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 65%;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  width: 60%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  height: 80%;
+  box-shadow: 10px 10px 42px 0 rgba(0, 0, 0, 0.75);
+  contain: content;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  padding-left: 2%;
+}
+
+button {
+  display: block;
+  text-align: center;
+  border: 2px black solid;
+  border-radius: 10%;
+  margin: 2%;
+  color: black;
+  font-size: 1rem;
+  background-color: whitesmoke;
+}
+button:hover {
+  border: 4px tan solid;
+  animation: ease 1s;
+  box-shadow: 4px green 100%;
+}
+
+#startBtn {
+  height: 50%;
+}
+
+#gagBtn {
+  height: 50%;
+}
+
+#questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  background-color: tan;
+  color: whitesmoke;
+  margin: 5%;
+  padding: 5%;
+}
+
+#time {
+  background-color: whitesmoke;
+  color: black;
+  border: 2px black solid;
+  border-radius: 10%;
+  width: 20%;
+  height: 40%;
+  margin: 1%;
+}
+
+#timer {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: red;
+  font-size: 3rem;
+}
+
+#answers {
+  width: 80%;
+  border: 2px black solid;
+  margin: 1%;
+  background-image: repeating-linear-gradient(0deg, rgba(228, 58, 131, 0.5) 0px, rgba(228, 58, 131, 0.5) 28px, transparent 28px, transparent 63px, rgba(228, 188, 58, 0.5) 63px, rgba(228, 188, 58, 0.5) 82px, transparent 82px, transparent 127px, rgba(63, 228, 58, 0.5) 127px, rgba(63, 228, 58, 0.5) 144px, transparent 144px, transparent 152px, rgba(58, 200, 228, 0.5) 152px, rgba(58, 200, 228, 0.5) 175px, transparent 175px, transparent 195px, rgba(120, 58, 228, 0.5) 195px, rgba(120, 58, 228, 0.5) 214px, transparent 214px, transparent 222px), repeating-linear-gradient(90deg, rgba(228, 58, 131, 0.5) 0px, rgba(228, 58, 131, 0.5) 45px, transparent 45px, transparent 66px, rgba(228, 188, 58, 0.5) 66px, rgba(228, 188, 58, 0.5) 93px, transparent 93px, transparent 121px, rgba(63, 228, 58, 0.5) 121px, rgba(63, 228, 58, 0.5) 158px, transparent 158px, transparent 207px, rgba(58, 200, 228, 0.5) 207px, rgba(58, 200, 228, 0.5) 214px, transparent 214px, transparent 243px, rgba(120, 58, 228, 0.5) 243px, rgba(120, 58, 228, 0.5) 285px, transparent 285px, transparent 331px), linear-gradient(90deg, white, white);
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1%;
+  list-style-type: none;
+  justify-content: center;
+  align-content: center;
+  row-gap: 10%;
+}
+
+li {
+  align-self: center;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  border: 2px solid green;
+  margin: 0%;
+  border-radius: 20px;
+  margin-left: 20%;
+  padding: 2%;
+  width: 50%;
+  color: black;
+  background-color: whitesmoke;
+}
+li:hover {
+  background-color: aqua;
+  animation: ease 1s;
+}
+
+footer {
+  display: block;
+  align-items: center;
+  text-align: center;
+  background-color: green;
+  width: 100%;
+  height: 10%;
+  font-size: 2rem;
+  font-weight: 200;
+  font-family: "Bebas Neue", cursive;
+}
+
+span {
+  font-weight: 400;
+  color: tan;
+}/*# sourceMappingURL=main.css.map */

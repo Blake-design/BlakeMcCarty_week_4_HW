@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The I.T. Crowd Quiz</title>
+    <link rel="stylesheet" href="styles/css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Are you smarter than Roy?</h1>
+      <h3>
+        This website was created to test the hypothesis that,<br />
+        "Everyone is , IN FACT, smarter than Roy Trenneman."<br />
+        Even this choice of Typeface, is a better life choice than ANY made by
+        Roy.
+      </h3>
+    </header>
+    <main>
+      <section>
+        <div class="title">
+          <div class="panel">
+            <button id="startBtn" onclick="startGame()">START GAME</button>
+          </div>
+          <div id="questions">Welcome Please click "Start Game" to play.</div>
+          <div id="time">
+            TIME LEFT
+            <div id="timer"></div>
+          </div>
+        </div>
+        <div id="answers">
+          <ul>
+            <li input type="button" id="a" onclick="checkAnswer(this.id)"></li>
+            <li input type="button" id="b" onclick="checkAnswer(this.id)"></li>
+            <li input type="button" id="c" onclick="checkAnswer(this.id)"></li>
+            <li input type="button" id="d" onclick="checkAnswer(this.id)"></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <time>&copy <span>Maurice Moss </span>2010</time>
+      <div id="disclaimer">
+        Disclaimer this site was created as a fan site for the BBC Channel 4 hit
+        comedy "The IT Crowd".
+      </div>
+    </footer>
+  </body>
+
+  <script src="main.js"></script>
+</html>
