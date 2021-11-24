@@ -6,6 +6,11 @@ var option2 = document.getElementById("b");
 var option3 = document.getElementById("c");
 var option4 = document.getElementById("d");
 var countDown = document.getElementById("timer");
+countDown.innerHTML = 10;
+var maurice = "<img src = ./assets/maurice.png  position = absolute>";
+var jen = "<img src = ./assets/jen.png  position = absolute>";
+var roy = "<img src = ./assets/roy.png  position = absolute>";
+var richmond = "<img src = ./assets/richmond.png  position = absolute>";
 
 ///// create an object to hold questions and answers
 const myQuestions = [
@@ -110,90 +115,89 @@ const myQuestions = [
 qIndex = [];
 
 ///store answers///
-aIndex = [];
+optionIndex = [];
 
 /// tracks current question #////
-current = [];
+answerIndex = [];
 
 ////keep score///
-(score = []), score >= 100;
+score = 0;
 
-////display questions by setting a loop of the length of myQuestions array////
-function renderQuestion() {
+function createArrays() {
   for (i = 0; i < myQuestions.length; i++) {
     ///push to single array///
     qIndex.push(myQuestions[i].q);
 
-    ///coorect answer array///
-    current.push(myQuestions[i].correct);
+    ///corect answer array///
+    answerIndex.push(myQuestions[i].correct);
 
-    //// push answers to and array
-    current.push(myQuestions[i].correct);
+    /////  put answers in a single array////
+    optionIndex.push(myQuestions[i].answers);
   }
-
-  ////push to HTML///
-  question.innerHTML = qIndex[1];
 }
 
-////this displays answers by setting a loop of 10 again///
-function renderAnswers() {
-  for (i = 0; i < myQuestions.length; i++) {
-    /////  put answers in a single array////
-    aIndex.push(myQuestions[i].answers);
+function renderQuestion() {
+  ////push to HTML///
+  question.innerHTML = qIndex[0];
+  if (qIndex[0] == undefined) {
+    question.innerHTML = "";
   }
+}
 
+function renderAnswers() {
   ///push answers from array to buttons///
-  option1.innerHTML = aIndex[0][0];
-  option2.innerHTML = aIndex[0][1];
-  option3.innerHTML = aIndex[0][2];
-  option4.innerHTML = aIndex[0][3];
+
+  option1.innerHTML = optionIndex[0][0];
+  option2.innerHTML = optionIndex[0][1];
+  option3.innerHTML = optionIndex[0][2];
+  option4.innerHTML = optionIndex[0][3];
 }
 
 ///this tellls me what is clicked///
 function checkAnswer(clickedId) {
-  console.log(clickedId);
-  console.log(i);
-  console.log(qIndex);
-  console.log(current);
-  //// if ID matched current correct////
-  if (clickedId === current[i]) {
-    score = +10;
-
-    ///double check to make sure variables are correct////
-
-    console.log(i);
-    console.log(qIndex);
-  }
+  correct = answerIndex[0];
+  if (clickedId === correct) {
+    //// if ID matched current correct////
+    score += 10;
+    nextQuestion();
+  } else nextQuestion();
 }
 //// force next question after 10secs
-
-var count = 10;
-function timer() {
-  var ref = setInterval(function () {
-    if (count === 0) {
-      clearInterval(ref);
-    }
+var ref;
+function timer(count) {
+  ref = setInterval(function () {
     count--;
     countDown.innerHTML = count;
+    console.log(count);
+    if (count === 0) {
+      clearInterval(ref);
+      nextQuestion();
+    } else if (qIndex[0] == undefined) {
+      clearInterval(ref);
+      displayScore();
+    }
   }, 1000);
 }
 
 ////move question index up 1///
 function nextQuestion() {
-  qIndex[i + 1];
-  aIndex[i + 1];
-  question.innerHTML = qIndex[i];
-  option1.innerHTML = aIndex[i][0];
-  option2.innerHTML = aIndex[i][1];
-  option3.innerHTML = aIndex[i][2];
-  option4.innerHTML = aIndex[i][3];
+  qIndex.shift();
+  optionIndex.shift();
+  answerIndex.shift();
+  renderQuestion();
+  renderAnswers();
+  clearInterval(ref);
+  timer(10);
+}
+
+function displayScore() {
+  question.innerHTML = "Congratulations you scored " + score + "%";
 }
 
 ////start game bttn function ///
 function startGame() {
+  createArrays();
   renderQuestion();
   renderAnswers();
   timer(10);
-  console.log(qIndex[i + 1]);
-  nextQuestion();
 }
