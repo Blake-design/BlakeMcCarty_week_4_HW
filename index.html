@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/css/main.css" />
   </head>
   <body>
-    <header>
+    <header id="header">
       <h1>Are you smarter than Roy?</h1>
       <h3>
         This website was created to test the hypothesis that,<br />
@@ -17,28 +17,41 @@
         Roy.
       </h3>
     </header>
-    <main>
-      <section>
-        <div class="top">
-          <div class="panel">
-            <button id="startBtn" onclick="startGame()">START GAME</button>
-          </div>
-          <div id="questions">Welcome Please click "Start Game" to play.</div>
-          <div id="timeBox">
-            TIME LEFT
-            <div id="timer"></div>
-          </div>
+
+    <!-- <div id="jen">
+        <img src="assets/jen.png" alt="jen photo" />
+      </div>
+      <div id="maurice">
+        <img src="assets/maurice.png" alt="maurice photo" />
+      </div>
+      <div id="roy">
+        <img src="assets/roy.png" alt="roy photo" />
+      </div> -->
+    <div id="richmond">
+      <div class="rtext">oh dear</div>
+      <img id="photo" src="assets/richmond.png" alt="richmond photo" />
+    </div>
+    <section>
+      <div class="top">
+        <div class="panel">
+          <button id="startBtn" onclick="startGame()">START GAME</button>
         </div>
-        <div id="answers">
-          <ul>
-            <li input type="button" id="a" onclick="checkAnswer(this.id)"></li>
-            <li input type="button" id="b" onclick="checkAnswer(this.id)"></li>
-            <li input type="button" id="c" onclick="checkAnswer(this.id)"></li>
-            <li input type="button" id="d" onclick="checkAnswer(this.id)"></li>
-          </ul>
+        <div id="questions">Welcome click "Start Game" to play.</div>
+        <div id="timeBox">
+          TIME LEFT
+          <div id="timer"></div>
         </div>
-      </section>
-    </main>
+      </div>
+      <div id="answers">
+        <ul>
+          <li input type="button" id="a" onclick="checkAnswer(this.id)"></li>
+          <li input type="button" id="b" onclick="checkAnswer(this.id)"></li>
+          <li input type="button" id="c" onclick="checkAnswer(this.id)"></li>
+          <li input type="button" id="d" onclick="checkAnswer(this.id)"></li>
+        </ul>
+      </div>
+    </section>
+
     <footer>
       <time>&copy <span>Maurice Moss </span>2010</time>
       <div id="disclaimer">

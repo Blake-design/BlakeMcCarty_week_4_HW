@@ -6,11 +6,13 @@ var option2 = document.getElementById("b");
 var option3 = document.getElementById("c");
 var option4 = document.getElementById("d");
 var countDown = document.getElementById("timer");
+var header = document.getElementById("header");
 countDown.innerHTML = 10;
-var maurice = "<img src = ./assets/maurice.png  position = absolute>";
-var jen = "<img src = ./assets/jen.png  position = absolute>";
-var roy = "<img src = ./assets/roy.png  position = absolute>";
-var richmond = "<img src = ./assets/richmond.png  position = absolute>";
+
+var richmond = document.getElementById("richmond");
+var jen = document.getElementById("jen");
+var maurice = document.getElementById("maurice");
+var roy = document.getElementById("roy");
 
 ///// create an object to hold questions and answers
 const myQuestions = [
@@ -152,6 +154,32 @@ function renderAnswers() {
   option3.innerHTML = optionIndex[0][2];
   option4.innerHTML = optionIndex[0][3];
 }
+///// make richmond pop out
+function ohDear(time) {
+  richmond.style.top = "-30px";
+  richmond.style.transition = "1s";
+  gagTimer = setInterval(function () {
+    time--;
+    console.log(time);
+    if (time === 0) {
+      clearInterval(gagTimer);
+      richmond.style.top = "200px";
+      richmond.style.transition = "1s";
+    }
+  }, 1000);
+}
+
+///this function will dim the header to allow gags to be seen better
+function dimTitle() {
+  header.style.opacity = "10%";
+  header.style.transition = "2s";
+}
+
+///when game ends bring the opacity back up
+function restoreTitle() {
+  header.style.opacity = "100%";
+  header.style.transition = "2s";
+}
 
 ///this tellls me what is clicked///
 function checkAnswer(clickedId) {
@@ -160,15 +188,17 @@ function checkAnswer(clickedId) {
     //// if ID matched current correct////
     score += 10;
     nextQuestion();
-  } else nextQuestion();
+  } else ohDear(2);
+  nextQuestion();
 }
+
 //// force next question after 10secs
 var ref;
 function timer(count) {
   ref = setInterval(function () {
     count--;
     countDown.innerHTML = count;
-    console.log(count);
+
     if (count === 0) {
       clearInterval(ref);
       nextQuestion();
@@ -192,6 +222,7 @@ function nextQuestion() {
 
 function displayScore() {
   question.innerHTML = "Congratulations you scored " + score + "%";
+  restoreTitle();
 }
 
 ////start game bttn function ///
@@ -200,4 +231,5 @@ function startGame() {
   renderQuestion();
   renderAnswers();
   timer(10);
+  dimTitle();
 }
