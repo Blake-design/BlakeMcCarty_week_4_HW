@@ -5,49 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The I.T. Crowd Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/css/main.css" />
   </head>
   <body>
-    <header id="header">
-      <h1>Are you smarter than Roy?</h1>
-      <h3>
-        This website was created to test the hypothesis that,<br />
-        "Everyone is , IN FACT, smarter than Roy Trenneman."<br />
-        Even this choice of Typeface, is a better life choice than ANY made by
-        Roy.
-      </h3>
-    </header>
+    <header></header>
 
-    <!-- <div id="jen">
-        <img src="assets/jen.png" alt="jen photo" />
-      </div>
-      <div id="maurice">
-        <img src="assets/maurice.png" alt="maurice photo" />
-      </div>
-      <div id="roy">
-        <img src="assets/roy.png" alt="roy photo" />
-      </div> -->
-    <div id="richmond">
-      <div class="rtext">oh dear</div>
-      <img id="photo" src="assets/richmond.png" alt="richmond photo" />
-    </div>
     <section>
       <div class="top">
-        <div class="panel">
-          <button id="startBtn" onclick="startGame()">START GAME</button>
+        <button id="startBtn" onclick="startGame()">START GAME</button>
+        <div class="display">
+          <div id="questions">Welcome click "Start Game" to play.</div>
+          <ul class="options">
+            <li id="a">A:</li>
+            <li id="b">B:</li>
+            <li id="c">C:</li>
+            <li id="d">D:</li>
+          </ul>
         </div>
-        <div id="questions">Welcome click "Start Game" to play.</div>
         <div id="timeBox">
           TIME LEFT
           <div id="timer"></div>
         </div>
       </div>
-      <div id="answers">
+      <div class="bottom">
         <ul>
-          <li input type="button" id="a" onclick="checkAnswer(this.id)"></li>
-          <li input type="button" id="b" onclick="checkAnswer(this.id)"></li>
-          <li input type="button" id="c" onclick="checkAnswer(this.id)"></li>
-          <li input type="button" id="d" onclick="checkAnswer(this.id)"></li>
+          <button
+            input
+            type="button"
+            id="buttonA"
+            class="keys"
+            onclick="checkAnswer(this.id)"
+          >
+            A
+          </button>
+          <button
+            input
+            type="button"
+            id="buttonB"
+            class="keys"
+            onclick="checkAnswer(this.id)"
+          >
+            B
+          </button>
+          <button
+            input
+            type="button"
+            id="buttonC"
+            class="keys"
+            onclick="checkAnswer(this.id)"
+          >
+            C
+          </button>
+          <button
+            input
+            type="button"
+            id="buttonD"
+            class="keys"
+            onclick="checkAnswer(this.id)"
+          >
+            D
+          </button>
         </ul>
       </div>
     </section>

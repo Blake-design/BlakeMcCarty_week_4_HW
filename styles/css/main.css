@@ -1,16 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@300;400&family=Patrick+Hand&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  width: 100%;
-  height: 100%;
-  font-family: "Patrick Hand", cursive;
-  color: whitesmoke;
+  color: rgb(162, 201, 157);
+  font-family: "Source Code Pro", monospace;
 }
 
 body {
-  background-color: green;
+  background-color: rgb(36, 37, 36);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,27 +15,8 @@ body {
   text-align: center;
 }
 
-#header {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: green;
-  width: 100%;
-  height: auto;
-  padding: 2%;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 65%;
+header {
+  height: 50px;
 }
 
 h1 {
@@ -51,167 +29,116 @@ h3 {
 }
 
 section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 80%;
-  height: 80%;
-  box-shadow: 10px 10px 42px 0 rgba(0, 0, 0, 0.75);
+  position: relative;
+
+  width: 80vw;
+  height: 80vh;
+
   background-color: beige;
   border-radius: 50px;
   padding: 1%;
-  z-index: 1;
 }
 
 .top {
+  position: relative;
+  bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  width: 100%;
+
+  padding: 50px;
+}
+.bottom {
+  position: absolute;
+  bottom: 50px;
+  left: 35%;
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-  padding-left: 2%;
-}
-
-button {
+#startBtn {
   display: block;
-  text-align: center;
+
   border: 2px black solid;
   border-radius: 10%;
-  margin: 2%;
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  padding: 10px;
   color: black;
   font-size: 1em;
   background-color: whitesmoke;
 }
-button:hover {
-  border: 4px tan solid;
-  animation: ease 1s;
-  box-shadow: 4px green 100%;
-}
-
-#startBtn {
-  height: 50%;
-}
-
-#questions {
+.display {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 2em;
-  background-color: whitesmoke;
-  color: black;
-  margin: 5%;
-  padding: 5%;
-
+  position: relative;
+  width: 60%;
+  height: 400px;
   border: 2px gray solid;
   border-radius: 10px;
+  background-color: whitesmoke;
+}
+#questions {
+  font-size: 2em;
+
+  width: 90%;
+
+  left: 20%;
+  padding: 20px;
+}
+.options {
+  position: absolute;
+  display: grid;
+  text-align: start;
+
+  bottom: 20px;
+  left: 10px;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 40px;
 }
 
 #timeBox {
   background-color: whitesmoke;
-  color: black;
+
+  top: 50px;
+  right: 50px;
   border: 2px black solid;
-  border-radius: 10%;
-  width: 20%;
+  border-radius: 10px;
+  width: 100px;
   height: auto;
-  margin: 1%;
+  margin: 50px;
   padding: 1%;
 }
 
 #timer {
   margin: 1%;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: red;
-  font-size: 2em;
-}
 
-#answers {
-  width: 80%;
-  border: 2px black solid;
-  margin: 1%;
-  padding: 1%;
-  background-image: repeating-linear-gradient(
-      0deg,
-      rgba(228, 58, 131, 0.5) 0px,
-      rgba(228, 58, 131, 0.5) 28px,
-      transparent 28px,
-      transparent 63px,
-      rgba(228, 188, 58, 0.5) 63px,
-      rgba(228, 188, 58, 0.5) 82px,
-      transparent 82px,
-      transparent 127px,
-      rgba(63, 228, 58, 0.5) 127px,
-      rgba(63, 228, 58, 0.5) 144px,
-      transparent 144px,
-      transparent 152px,
-      rgba(58, 200, 228, 0.5) 152px,
-      rgba(58, 200, 228, 0.5) 175px,
-      transparent 175px,
-      transparent 195px,
-      rgba(120, 58, 228, 0.5) 195px,
-      rgba(120, 58, 228, 0.5) 214px,
-      transparent 214px,
-      transparent 222px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(228, 58, 131, 0.5) 0px,
-      rgba(228, 58, 131, 0.5) 45px,
-      transparent 45px,
-      transparent 66px,
-      rgba(228, 188, 58, 0.5) 66px,
-      rgba(228, 188, 58, 0.5) 93px,
-      transparent 93px,
-      transparent 121px,
-      rgba(63, 228, 58, 0.5) 121px,
-      rgba(63, 228, 58, 0.5) 158px,
-      transparent 158px,
-      transparent 207px,
-      rgba(58, 200, 228, 0.5) 207px,
-      rgba(58, 200, 228, 0.5) 214px,
-      transparent 214px,
-      transparent 243px,
-      rgba(120, 58, 228, 0.5) 243px,
-      rgba(120, 58, 228, 0.5) 285px,
-      transparent 285px,
-      transparent 331px
-    ),
-    linear-gradient(90deg, white, white);
+  font-size: 2em;
 }
 
 ul {
   display: grid;
+  bottom: 20px;
   grid-template-columns: repeat(2, 1fr);
 
   list-style-type: none;
-  justify-content: center;
-  align-content: center;
-  row-gap: 10%;
+
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
-li {
+button {
+  display: flex;
   align-self: center;
   text-align: center;
-  font-family: "IBM Plex Mono", monospace;
-  border: 2px solid green;
 
-  border-radius: 20px;
-  margin-left: 20%;
-  padding: 2%;
-  width: 50%;
+  border: 2px black solid;
+
+  border-radius: 10px;
+
+  padding: 10px;
+  width: 10vw;
   color: black;
+  font-size: 1em;
   background-color: whitesmoke;
 }
 li:hover {
@@ -223,67 +150,114 @@ footer {
   display: block;
   align-items: center;
   text-align: center;
-  background-color: green;
+  margin: 50px;
   width: 100%;
   height: auto;
   font-size: 1em;
   font-weight: 200;
-  font-family: "Bebas Neue", cursive;
 }
 
 span {
   font-weight: 400;
   color: tan;
 }
-#richmond {
-  position: relative;
-  height: 200px;
-  width: 150px;
-  top: 200px;
-  left: -30%;
-}
-#photo {
-  position: absolute;
-  height: 150px;
-  width: 150px;
-  z-index: 1;
-}
-.rtext {
-  position: absolute;
-  top: 30px;
-  left: 150px;
-}
-#roy {
-  position: absolute;
-  height: 150px;
-  width: auto;
-  top: 200px;
-  left: 80%;
-}
-#jen {
-  position: absolute;
-  height: 150px;
-  width: auto;
-  top: 20%;
-  left: 40%;
-}
-#maurice {
-  position: absolute;
-  height: 150px;
-  width: auto;
-  top: 150px;
-  left: 50%;
-}
 
-@media only screen and (max-width: 800px) {
-  #header {
+@media only screen and (max-width: 1030px) {
+  header {
     display: none;
+  }
+  section {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0px;
+  }
+  .display {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border: 2px gray solid;
+    border-radius: 10px;
+    background-color: whitesmoke;
+  }
+  footer {
+    display: none;
+  }
+}
+@media only screen and (max-width: 800px) {
+  header {
+    display: none;
+  }
+  .top {
+    position: relative;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+  }
+  #startBtn {
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: -30px;
+    border: 2px black solid;
+    border-radius: 10%;
+    width: 80px;
+    height: 80px;
+
+    padding: 10px;
+    color: black;
+    font-size: 1em;
+    background-color: whitesmoke;
+  }
+  .display {
+    display: flex;
+    position: relative;
+    width: 80vw;
+    height: 400px;
+    border: 2px gray solid;
+    border-radius: 10px;
+    background-color: whitesmoke;
+  }
+  #questions {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1em;
+
+    width: 90%;
+
+    padding: 20px;
+  }
+  #timeBox {
+    background-color: whitesmoke;
+    display: block;
+    position: relative;
+    top: -40px;
+    right: 0px;
+    border: 2px black solid;
+    border-radius: 10px;
+    width: 100px;
+    height: auto;
+    margin: 50px;
+    padding: 1%;
+  }
+  #timer {
+    font-size: 1em;
+  }
+  ul {
+    display: grid;
+    bottom: -10px;
+    grid-template-columns: repeat(2, 1fr);
+
+    list-style-type: none;
+
+    row-gap: 20px;
+    column-gap: 40px;
   }
 
   footer {
-    font-size: 1em;
-  }
-  li {
-    font-size: 0.6em;
+    display: none;
   }
 }
