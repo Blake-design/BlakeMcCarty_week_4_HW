@@ -157,7 +157,7 @@ function renderQuestion() {
     optionIndex.shift();
   }
 }
-console.log(optionIndex[0]);
+
 function renderAnswers() {
   ///push options from array to buttons///
   if (answerIndex[0] == undefined) {
